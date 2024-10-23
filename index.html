@@ -5,41 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="icon" href="./img/raccoon-logo.webp" />
+    <!-- # google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- # custom css -->
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <!-- header -->
-    <header>
-      <h1>Calcola il prezzo del tuo biglietto</h1>
-    </header>
     <!-- main -->
     <main>
-      <form id="ticket-info-form">
-        <!-- user info -->
-        <!-- <div>
-          <label for="">Nome</label>
-          <input type="text" id="user-name" />
+      <div class="container">
+        <h2>Calcola il prezzo del tuo biglietto</h2>
+        <!-- form -->
+        <form id="ticket-info-form" class="d-flex wrap">
+          <!-- user info -->
+          <div class="w-100">
+            <div>
+              <label for="">Nome</label>
+              <input type="text" id="user-name" />
+            </div>
+            <!-- distance -->
+            <div>
+              <label for="distance">Km</label>
+              <input type="text" id="distance" required />
+            </div>
+            <!-- age range -->
+            <div>
+              <label for="age-range">eta'</label>
+              <select id="age-range">
+                <option value="minor">under18</option>
+                <option selected value="no-discount">18-64</option>
+                <option value="senior">over65</option>
+              </select>
+            </div>
+          </div>
+          <!-- buttons -->
+          <div class="w-100">
+            <button id="submit-btn" class="btn">Calcola</button>
+            <button id="cancel-btn" class="btn">Annulla</button>
+          </div>
+        </form>
+      </div>
+      <div class="container" id="ticket-container">
+        <!-- <h2>Il tuo biglietto</h2>
+        <div>
+          <h3>Dettaglio passeggeri</h3>
+          <div>
+            <h4>Nome passeggero</h4>
+            <p id="passenger-name"></p>
+          </div>
+          <div>
+            <h4>Offerta</h4>
+            <p></p>
+            <h4>Carrozza</h4>
+            <p>5</p>
+            <h4>Codice CP</h4>
+            <p>92911</p>
+            <h4>Costo bigllietto</h4>
+            <p></p>
+          </div>
         </div> -->
-        <!-- distance -->
-        <div>
-          <label for="distance">Km</label>
-          <input type="text" id="distance" required />
-        </div>
-        <!-- age range -->
-        <div>
-          <label for="age-range">eta'</label>
-          <select id="age-range">
-            <option value="minor">under18</option>
-            <option selected value="no-discount">18-64</option>
-            <option value="senior">over65</option>
-          </select>
-        </div>
-        <div>
-          <button id="submit-btn">calc</button>
-          <button id="cancel-btn">nope</button>
-        </div>
-      </form>
+      </div>
     </main>
     <!-- # custom js -->
     <script src="./js/script.js"></script>

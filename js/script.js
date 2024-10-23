@@ -19,7 +19,7 @@ const ticketForm = document.getElementById("ticket-info-form");
 const minorDiscount = 20;
 const seniorDiscount = 40;
 
-// # calc
+// # submission
 
 submitButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -54,6 +54,33 @@ submitButton.addEventListener("click", (event) => {
 
     let finalPrice = ticketPrice - discountPrice;
     console.log(ticketPrice, finalPrice.toFixed(2));
+
+    // # output
+
+    const outputTicket = document.getElementById("ticket-container");
+
+    const htmlTicket = `
+        <h2>Il tuo biglietto</h2>
+        <div>
+          <h3>Dettaglio passeggeri</h3>
+          <div>
+            <h4>Nome passeggero</h4>
+            <p id="passenger-name">
+            </p>
+          </div>
+          <div>
+            <h4>Offerta</h4>
+            <p></p>
+            <h4>Carrozza</h4>
+            <p>5</p>
+            <h4>Codice CP</h4>
+            <p>92911</p>
+            <h4>Costo bigllietto</h4>
+            <p>${finalPrice.toFixed(2)}</p>
+          </div>
+        </div>`;
+
+    outputTicket.innerHTML = htmlTicket;
   } else {
     console.log("invalid data");
   }
