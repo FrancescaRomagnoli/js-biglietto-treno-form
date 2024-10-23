@@ -24,21 +24,22 @@
         <!-- distance -->
         <div>
           <label for="distance">Km</label>
-          <input type="text" id="distance" />
+          <input type="text" id="distance" required />
         </div>
         <!-- age range -->
         <div>
           <label for="age-range">eta'</label>
           <select id="age-range">
+            <option value="no-discount">18-64</option>
             <option value="minor">under18</option>
             <option value="senior">over65</option>
           </select>
         </div>
+        <div>
+          <button id="submit-btn">calc</button>
+          <button id="cancel-btn">nope</button>
+        </div>
       </form>
-      <div>
-        <button id="generate-btn">calc</button>
-        <button id="cancel-btn">nope</button>
-      </div>
     </main>
     <!-- # custom js -->
     <script src="./js/script.js"></script>
