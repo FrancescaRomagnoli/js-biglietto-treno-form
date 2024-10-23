@@ -3,11 +3,14 @@
 const pricePerKm = 0.21;
 const userDistanceInput = document.getElementById("distance");
 const userAgeRangeInput = document.getElementById("age-range");
+const userFullNameInput = document.getElementById("user-fullname");
 
 const submitButton = document.getElementById("submit-btn");
 const cancelButton = document.getElementById("cancel-btn");
 
 const ticketForm = document.getElementById("ticket-info-form");
+
+let ticketOffer = "Biglietto Standard";
 
 // console.log(userDistanceInput.value);
 // console.log(userAgeRangeInput.value);
@@ -27,18 +30,22 @@ submitButton.addEventListener("click", (event) => {
   // # user input data
   let userDistance = parseInt(userDistanceInput.value);
   let userAgeRange = userAgeRangeInput.value;
+  let userFullName = userFullNameInput.value;
   let discountPrice = 0;
   let ticketPrice = userDistance * pricePerKm;
 
   // # validation
   isUserDistanceValid = userDistanceInput.value > 0;
+  isuserFullNameInputValid = userFullNameInput.value.length > 3;
 
-  if (isUserDistanceValid) {
+  if (isUserDistanceValid && isuserFullNameInputValid) {
     // # discount calc
     if (userAgeRangeInput.value === "minor") {
       discountPrice = (ticketPrice * minorDiscount) / 100;
+      ticketOffer = "Offerta Under 18";
     } else if (userAgeRangeInput.value === "senior") {
       discountPrice = (ticketPrice * seniorDiscount) / 100;
+      ticketOffer = "Offerta Over 65";
     }
 
     console.log(
@@ -49,6 +56,7 @@ submitButton.addEventListener("click", (event) => {
       typeof userAgeRange,
       userAgeRange
     );
+    console.log(userFullNameInput.value);
 
     // # final price calc
 
@@ -65,12 +73,12 @@ submitButton.addEventListener("click", (event) => {
           <h3>Dettaglio passeggeri</h3>
           <div>
             <h4>Nome passeggero</h4>
-            <p id="passenger-name">
+            <p id="passenger-name"> ${userFullName}
             </p>
           </div>
           <div>
             <h4>Offerta</h4>
-            <p></p>
+            <p>${ticketOffer}</p>
             <h4>Carrozza</h4>
             <p>5</p>
             <h4>Codice CP</h4>

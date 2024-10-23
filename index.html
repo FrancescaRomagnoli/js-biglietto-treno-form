@@ -21,12 +21,12 @@
       <div class="container">
         <h2>Calcola il prezzo del tuo biglietto</h2>
         <!-- form -->
-        <form id="ticket-info-form" class="d-flex wrap">
+        <form id="ticket-info-form">
           <!-- user info -->
-          <div class="w-100">
+          <div>
             <div>
               <label for="">Nome</label>
-              <input type="text" id="user-name" />
+              <input type="text" id="user-fullname" />
             </div>
             <!-- distance -->
             <div>
@@ -44,12 +44,13 @@
             </div>
           </div>
           <!-- buttons -->
-          <div class="w-100">
+          <div>
             <button id="submit-btn" class="btn">Calcola</button>
             <button id="cancel-btn" class="btn">Annulla</button>
           </div>
         </form>
       </div>
+      <!-- ticket -->
       <div class="container" id="ticket-container">
         <!-- <h2>Il tuo biglietto</h2>
         <div>
