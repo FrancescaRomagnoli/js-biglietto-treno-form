@@ -68,23 +68,34 @@ submitButton.addEventListener("click", (event) => {
     const outputTicket = document.getElementById("ticket-container");
 
     const htmlTicket = `
-        <h2>Il tuo biglietto</h2>
-        <div>
-          <h3>Dettaglio passeggeri</h3>
-          <div>
-            <h4>Nome passeggero</h4>
-            <p id="passenger-name"> ${userFullName}
-            </p>
+        <h2 class="text-center mb-5 mt-3">Il tuo biglietto</h2>
+        <div class="row justify-content-around align-content-center">
+          <div class="col-4 bg-info p-3">
+            <div class="mb-2 fs-4">Dettaglio passeggeri</div>
+            <div>
+              <div class="mb-2 fs-5">Nome passeggero</div>
+              <div id="passenger-name">${userFullName}</div>
+            </div>
           </div>
-          <div>
-            <h4>Offerta</h4>
-            <p>${ticketOffer}</p>
-            <h4>Carrozza</h4>
-            <p>5</p>
-            <h4>Codice CP</h4>
-            <p>92911</p>
-            <h4>Costo bigllietto</h4>
-            <p>${finalPrice.toFixed(2)}</p>
+          <div class="col-6 p-3">
+            <div class="row">
+              <div class="col">
+                <div class="mb-5 fs-5">Offerta</div>
+                <div>${ticketOffer}</div>
+              </div>
+              <div class="col">
+                <div class="mb-5 fs-5">Carrozza</div>
+                <div>5</div>
+              </div>
+              <div class="col">
+                <div class="mb-5 fs-5">Codice CP</div>
+                <div>92911</div>
+              </div>
+              <div class="col">
+                <div class="mb-5 fs-5">Costo biglietto</div>
+                <div>${finalPrice.toFixed(2)}</div>
+              </div>
+            </div>
           </div>
         </div>`;
 
