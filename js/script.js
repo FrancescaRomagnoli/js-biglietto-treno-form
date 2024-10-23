@@ -30,23 +30,31 @@ submitButton.addEventListener("click", (event) => {
   let discountPrice = 0;
   let ticketPrice = userDistance * pricePerKm;
 
-  if (userAgeRangeInput.value === "minor") {
-    discountPrice = (ticketPrice * minorDiscount) / 100;
-  } else if (userAgeRangeInput.value === "senior") {
-    discountPrice = (ticketPrice * seniorDiscount) / 100;
+  // # validation
+  isUserDistanceValid = userDistanceInput.value > 0;
+
+  if (isUserDistanceValid) {
+    // # discount calc
+    if (userAgeRangeInput.value === "minor") {
+      discountPrice = (ticketPrice * minorDiscount) / 100;
+    } else if (userAgeRangeInput.value === "senior") {
+      discountPrice = (ticketPrice * seniorDiscount) / 100;
+    }
+
+    console.log(
+      "userDistance :",
+      typeof userDistance,
+      userDistance,
+      "userAgeRange :",
+      typeof userAgeRange,
+      userAgeRange
+    );
+
+    // # final price calc
+
+    let finalPrice = ticketPrice - discountPrice;
+    console.log(ticketPrice, finalPrice.toFixed(2));
+  } else {
+    console.log("invalid data");
   }
-
-  console.log(
-    "userDistance :",
-    typeof userDistance,
-    userDistance,
-    "userAgeRange :",
-    typeof userAgeRange,
-    userAgeRange
-  );
-
-  // # calc
-
-  let finalPrice = ticketPrice - discountPrice;
-  console.log(ticketPrice, finalPrice);
 });
