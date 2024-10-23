@@ -9,6 +9,37 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    <!-- header -->
+    <header>
+      <h1>Calcola il prezzo del tuo biglietto</h1>
+    </header>
+    <!-- main -->
+    <main>
+      <form id="ticket-info-form">
+        <!-- user info -->
+        <!-- <div>
+          <label for="">Nome</label>
+          <input type="text" id="user-name" />
+        </div> -->
+        <!-- distance -->
+        <div>
+          <label for="distance">Km</label>
+          <input type="text" id="distance" />
+        </div>
+        <!-- age range -->
+        <div>
+          <label for="age-range">eta'</label>
+          <select id="age-range">
+            <option value="minor">under18</option>
+            <option value="senior">over65</option>
+          </select>
+        </div>
+      </form>
+      <div>
+        <button id="generate-btn">calc</button>
+        <button id="cancel-btn">nope</button>
+      </div>
+    </main>
     <!-- # custom js -->
     <script src="./js/script.js"></script>
   </body>
